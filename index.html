@@ -1,0 +1,197 @@
+<body>
+<script>
+
+    const bgColor = '#897E7E'
+    const pink = '#c271a2'
+    const hotpink = '#cc3e93'
+    const bbypink = '#d38db7'
+    const bloodpink = '#aa274e'
+
+    let xbunny = 55
+    let ybunny = 55
+    let speed = 11
+    let magic = 5
+    
+    function createText(cool, branch) {
+        const text = document.createElement("div")
+        const content = document.createTextNode(cool)
+        text.appendChild(content)
+        const currentDiv = document.getElementById("div1")
+        document.body.insertBefore(text, currentDiv)
+        text.style.position = 'absolute'
+        text.style.top = branch
+        text.style.left = innerWidth / 7
+        text.style.color = '#213340'
+        text.style.fontSize = 22
+      }
+
+    function createPixel(backgroundColour, xpixel, ypixel, hpixel, wpixel, layer) {
+        let xpixels = xbunny + xpixel
+        let ypixels = ybunny + ypixel
+        const pixel = document.createElement("div")
+        pixel.className = 'square'
+        document.body.appendChild(pixel)
+        pixel.style.position = 'absolute'
+        pixel.style.top = xpixels
+        pixel.style.left = ypixels
+        pixel.style.background = backgroundColour
+        pixel.style.height = hpixel
+        pixel.style.width = wpixel
+        pixel.style.zIndex = layer
+
+        window.addEventListener('keydown', (e) => {
+            if (e.keyCode === 37) {
+                // move left
+                if (ypixels > -111) {
+                    ypixels -= speed
+                    pixel.style.left = ypixels
+                }
+                if (ypixels < -11) {
+                    ypixels += (window.innerWidth + 11)
+                    xpixels -= 111
+                    pixel.style.left = ypixels
+                    pixel.style.top = xpixels
+                }
+            } else if (e.keyCode === 39) {
+                //move right
+                if (ypixels - 11 < window.innerWidth) {
+                    ypixels += speed
+                    console.log(ypixels)
+                    console.log(xpixels)
+                    pixel.style.left = ypixels
+                }
+                if (ypixels > window.innerWidth + 11) {
+                    ypixels -= (window.innerWidth + 11)
+                    xpixels += 111 
+                    pixel.style.left = ypixels 
+                    pixel.style.top = xpixels 
+                }
+            }
+        } )
+    }
+
+    function createPix(backgroundColour, xpixel, ypixel, hpixel, wpixel, layer) {
+        let xpixels = xbunny + xpixel
+        let ypixels = ybunny + ypixel
+        const pixel = document.createElement("div")
+        pixel.className = 'box'
+        document.body.appendChild(pixel)
+        pixel.style.position = 'absolute'
+        pixel.style.top = xpixels
+        pixel.style.left = ypixels
+        pixel.style.background = backgroundColour
+        pixel.style.height = hpixel
+        pixel.style.width = wpixel
+        pixel.style.zIndex = layer
+
+        window.addEventListener('keydown', (e) => {
+            if (e.keyCode === 37) {
+                // move left
+                if (ypixels > -111) {
+                    ypixels -= speed
+                    layer *= -1
+                    pixel.style.left = ypixels
+                    pixel.style.zIndex = layer
+                }
+                if (ypixels < -11) {
+                    ypixels += (window.innerWidth + 11)
+                    xpixels -= 111
+                    layer *= -1
+                    pixel.style.left = ypixels
+                    pixel.style.top = xpixels
+                    pixel.style.zIndex = layer
+                }
+            } else if (e.keyCode === 39) {
+                //move right
+                if (ypixels - 11 < window.innerWidth) {
+                    ypixels += speed
+                    layer *= -1
+                    pixel.style.left = ypixels
+                    pixel.style.zIndex = layer
+                }
+                if (ypixels > window.innerWidth + 11) {
+                    ypixels -= (window.innerWidth + 11)
+                    xpixels += 111 
+                    layer *= -1
+                    pixel.style.left = ypixels 
+                    pixel.style.top = xpixels 
+                    pixel.style.zIndex = layer
+                }
+            }
+        } )
+    }
+
+    function setup () {
+        document.body.style.backgroundColor = bgColor
+    
+        createText('Welcome to my site! You can control my heart with left and right arrow keys, and also refresh the page when it breaks.', 222)
+        createText('links to:', 444)
+        // createText('Bunny', 477)
+        // createText('more html files', 510)
+
+        createPixel(bbypink, 55, 154, 11, 11, 0)
+        createPixel(bbypink, 55, 165, 11, 11, 0)
+        createPixel(pink, 55, 187, 11, 11, 0)
+        createPixel(pink, 55, 198, 11, 11, 0)
+        createPixel(bloodpink, 66, 143, 11, 11, 0)
+        createPixel(pink, 66, 154, 11, 11, 0)
+        createPixel(pink, 66, 165, 11, 11, 0)
+        createPixel(hotpink, 66, 176, 11, 11, 0)
+        createPixel(bloodpink, 66, 187, 11, 11, 0)
+        createPixel(bloodpink, 66, 198, 11, 11, 0)
+        createPixel(bbypink, 66, 208, 11, 11, 0)
+        createPixel(bloodpink, 77, 143, 11, 11, 0)
+        createPixel(pink, 77, 154, 11, 11, 0)
+        createPixel(hotpink, 77, 165, 11, 11, 0)
+        createPixel(bloodpink, 77, 176, 11, 11, 0)
+        createPixel(pink, 77, 187, 11, 11, 0)
+        createPixel(hotpink, 77, 198, 11, 11, 0)
+        createPixel(bbypink, 77, 208, 11, 11, 0)
+        createPixel(hotpink, 88, 154, 11, 11, 0)
+        createPixel(hotpink, 88, 165, 11, 11, 0)
+        createPixel(bloodpink, 88, 176, 11, 11, 0)
+        createPixel(pink, 88, 187, 11, 11, 0)
+        createPixel(pink, 88, 198, 11, 11, 0)
+        createPixel(hotpink, 99, 165, 11, 11, 0)
+        createPixel(bloodpink, 99, 176, 11, 11, 0)
+        createPixel(pink, 99, 187, 11, 11, 0)
+        createPixel(hotpink, 110, 176, 11, 11, 0)
+
+        createPix(bloodpink, 55, 154, 11, 11, magic)
+        createPix(bloodpink, 55, 165, 11, 11, magic)
+        createPix(hotpink, 55, 187, 11, 11, magic)
+        createPix(hotpink, 55, 198, 11, 11, magic)
+        createPix(bbypink, 66, 143, 11, 11, magic)
+        createPix(hotpink, 66, 154, 11, 11, magic)
+        createPix(hotpink, 66, 165, 11, 11, magic)
+        createPix(pink, 66, 176, 11, 11, magic)
+        createPix(bbypink, 66, 187, 11, 11, magic)
+        createPix(bbypink, 66, 198, 11, 11, magic)
+        createPix(bloodpink, 66, 208, 11, 11, magic)
+        createPix(bbypink, 77, 143, 11, 11, magic)
+        createPix(hotpink, 77, 154, 11, 11, magic)
+        createPix(pink, 77, 165, 11, 11, magic)
+        createPix(bbypink, 77, 176, 11, 11, magic)
+        createPix(hotpink, 77, 187, 11, 11, magic)
+        createPix(pink, 77, 198, 11, 11, magic)
+        createPix(bloodpink, 77, 208, 11, 11, magic)
+        createPix(pink, 88, 154, 11, 11, magic)
+        createPix(pink, 88, 165, 11, 11, magic)
+        createPix(bbypink, 88, 176, 11, 11, magic)
+        createPix(hotpink, 88, 187, 11, 11, magic)
+        createPix(hotpink, 88, 198, 11, 11, magic)
+        createPix(pink, 99, 165, 11, 11, magic)
+        createPix(bbypink, 99, 176, 11, 11, magic)
+        createPix(hotpink, 99, 187, 11, 11, magic)
+        createPix(pink, 110, 176, 11, 11, magic)
+
+    }
+
+        window.addEventListener('load', setup)
+
+    </script>
+
+<div class="link1" style="position: absolute; top: 477; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">Bunny</a></div>
+<div class="link2" style="position: absolute; top: 510; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">more html files</a></div>
+
+</body>
