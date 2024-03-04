@@ -6,6 +6,7 @@
     const hotpink = '#cc3e93'
     const bbypink = '#d38db7'
     const bloodpink = '#aa274e'
+    const imageURL = 'ice.png'
 
     let xbunny = 55
     let ybunny = 55
@@ -123,11 +124,34 @@
 
     function setup () {
         document.body.style.backgroundColor = bgColor
-    
-        createText('Welcome to my site! You can control my heart with left and right arrow keys, and also refresh the page when it breaks.', 222)
-        createText('links to:', 444)
-        // createText('Bunny', 477)
-        // createText('more html files', 510)
+        const icepng = document.createElement('img')
+        icepng.src = imageURL
+        document.body.appendChild(icepng)
+        icepng.style.zIndex = -666
+        icepng.style.width = (window.innerWidth - 666)
+        icepng.style.top = 22
+        icepng.style.left = 22
+       
+        createText('Here are some html files too look at. View the page source to see similarities in my code.', 666)
+        createText('links to:', 722)
+        // createText('Bunny', 777)
+        // createText('Bunnyduck', 810)
+        // createText('fireflies', 843)
+        // createText('An page made for my friends soundcloud', 876)
+        // createText('Mix-me', 909)
+        createText('The maker of Bunny is a human reincarnate on planet Earth. They are deeply ', 999)
+        createText('connected to the woods, the Earth and are interested in nature preservation and ', 1021)
+        createText('cultivation. They believe in giving back the land. The maker studied visual arts at a ', 1043)
+        createText('public arts magnet high school where they learned the importance of play and started ', 1065)
+        createText('storytelling, practicing in a studio setting for the first time. As an undergraduate student,', 1087)
+        createText('they became interested in the history of hypertext, interactive fiction and other ', 1109)
+        createText('storytelling forms online. The maker of Bunny was highly influenced by their experience  ', 1131)
+        createText('learning about and making Twine interactive games and Internet art in college and also  ', 1153)
+        createText('by their own personal experiences playing computer games and being online in their ', 1175)
+        createText('childhood. Bunny as a project was designed for the makers siblings and to pass on', 1197)
+        createText('coding knowledge the maker had learned in college. ', 1219)
+        
+        createText('♡Thank you♡', 1263)
 
         createPixel(bbypink, 55, 154, 11, 11, 0)
         createPixel(bbypink, 55, 165, 11, 11, 0)
@@ -191,7 +215,10 @@
 
     </script>
 
-<div class="link1" style="position: absolute; top: 477; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">Bunny</a></div>
-<div class="link2" style="position: absolute; top: 510; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">more html files</a></div>
+<div class="link1" style="position: absolute; top: 777; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">Bunny</a></div>
+<div class="link2" style="position: absolute; top: 810; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">Bunnyduck</a></div>
+<div class="link3" style="position: absolute; top: 843; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">fireflies</a></div>
+<div class="link4" style="position: absolute; top: 876; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">An page made for my friends soundcloud</a></div>
+<div class="link5" style="position: absolute; top: 909; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/rosie-ikona-hw/" target="_blank" rel="noreferrer noopener">Mix-me</a></div>
 
 </body>
