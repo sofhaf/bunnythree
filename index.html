@@ -1,224 +1,214 @@
 <body>
-<script>
-
-    const bgColor = '#897E7E'
-    const pink = '#c271a2'
-    const hotpink = '#cc3e93'
-    const bbypink = '#d38db7'
-    const bloodpink = '#aa274e'
-    const imageURL = 'ice.png'
-
-    let xbunny = 55
-    let ybunny = 55
-    let speed = 11
-    let magic = 5
+    <script>
     
-    function createText(cool, branch) {
-        const text = document.createElement("div")
-        const content = document.createTextNode(cool)
-        text.appendChild(content)
-        const currentDiv = document.getElementById("div1")
-        document.body.insertBefore(text, currentDiv)
-        text.style.position = 'absolute'
-        text.style.top = branch
-        text.style.left = innerWidth / 7
-        text.style.color = '#213340'
-        text.style.fontSize = 22
-      }
-
-    function createPixel(backgroundColour, xpixel, ypixel, hpixel, wpixel, layer) {
-        let xpixels = xbunny + xpixel
-        let ypixels = ybunny + ypixel
-        const pixel = document.createElement("div")
-        pixel.className = 'square'
-        document.body.appendChild(pixel)
-        pixel.style.position = 'absolute'
-        pixel.style.top = xpixels
-        pixel.style.left = ypixels
-        pixel.style.background = backgroundColour
-        pixel.style.height = hpixel
-        pixel.style.width = wpixel
-        pixel.style.zIndex = layer
-
-        window.addEventListener('keydown', (e) => {
-            if (e.keyCode === 37) {
-                // move left
-                if (ypixels > -111) {
-                    ypixels -= speed
-                    pixel.style.left = ypixels
-                }
-                if (ypixels < -11) {
-                    ypixels += (window.innerWidth + 11)
-                    xpixels -= 111
-                    pixel.style.left = ypixels
-                    pixel.style.top = xpixels
-                }
-            } else if (e.keyCode === 39) {
-                //move right
-                if (ypixels - 11 < window.innerWidth) {
-                    ypixels += speed
-                    console.log(ypixels)
-                    console.log(xpixels)
-                    pixel.style.left = ypixels
-                }
-                if (ypixels > window.innerWidth + 11) {
-                    ypixels -= (window.innerWidth + 11)
-                    xpixels += 111 
-                    pixel.style.left = ypixels 
-                    pixel.style.top = xpixels 
-                }
-            }
-        } )
-    }
-
-    function createPix(backgroundColour, xpixel, ypixel, hpixel, wpixel, layer) {
-        let xpixels = xbunny + xpixel
-        let ypixels = ybunny + ypixel
-        const pixel = document.createElement("div")
-        pixel.className = 'box'
-        document.body.appendChild(pixel)
-        pixel.style.position = 'absolute'
-        pixel.style.top = xpixels
-        pixel.style.left = ypixels
-        pixel.style.background = backgroundColour
-        pixel.style.height = hpixel
-        pixel.style.width = wpixel
-        pixel.style.zIndex = layer
-
-        window.addEventListener('keydown', (e) => {
-            if (e.keyCode === 37) {
-                // move left
-                if (ypixels > -111) {
-                    ypixels -= speed
-                    layer *= -1
-                    pixel.style.left = ypixels
-                    pixel.style.zIndex = layer
-                }
-                if (ypixels < -11) {
-                    ypixels += (window.innerWidth + 11)
-                    xpixels -= 111
-                    layer *= -1
-                    pixel.style.left = ypixels
-                    pixel.style.top = xpixels
-                    pixel.style.zIndex = layer
-                }
-            } else if (e.keyCode === 39) {
-                //move right
-                if (ypixels - 11 < window.innerWidth) {
-                    ypixels += speed
-                    layer *= -1
-                    pixel.style.left = ypixels
-                    pixel.style.zIndex = layer
-                }
-                if (ypixels > window.innerWidth + 11) {
-                    ypixels -= (window.innerWidth + 11)
-                    xpixels += 111 
-                    layer *= -1
-                    pixel.style.left = ypixels 
-                    pixel.style.top = xpixels 
-                    pixel.style.zIndex = layer
-                }
-            }
-        } )
-    }
-
-    function setup () {
-        document.body.style.backgroundColor = bgColor
-        const icepng = document.createElement('img')
-        icepng.src = imageURL
-        document.body.appendChild(icepng)
-        icepng.style.zIndex = -666
-        icepng.style.width = (window.innerWidth - 666)
-        icepng.style.top = 22
-        icepng.style.left = 22
-       
-        createText('Here are some html files too look at. View the page source to see similarities in my code.', 666)
-        createText('links to:', 722)
-        // createText('Bunny', 777)
-        // createText('Bunnyduck', 810)
-        // createText('fireflies', 843)
-        // createText('An page made for my friends soundcloud', 876)
-        // createText('Mix-me', 909)
-        createText('The maker of Bunny is a human reincarnate on planet Earth. They are deeply ', 999)
-        createText('connected to the woods, the Earth and are interested in nature preservation and ', 1021)
-        createText('cultivation. They believe in giving back the land. The maker studied visual arts at a ', 1043)
-        createText('public arts magnet high school where they learned the importance of play and started ', 1065)
-        createText('storytelling, practicing in a studio setting for the first time. As an undergraduate student,', 1087)
-        createText('they became interested in the history of hypertext, interactive fiction and other ', 1109)
-        createText('storytelling forms online. The maker of Bunny was highly influenced by their experience  ', 1131)
-        createText('learning about and making Twine interactive games and Internet art in college and also  ', 1153)
-        createText('by their own personal experiences playing computer games and being online in their ', 1175)
-        createText('childhood. Bunny as a project was designed for the makers siblings and to pass on', 1197)
-        createText('coding knowledge the maker had learned in college. ', 1219)
+        const bgColor = '#897E7E'
+        const pink = '#c271a2'
+        const hotpink = '#cc3e93'
+        const bbypink = '#d38db7'
+        const bloodpink = '#aa274e'
+        const imageURL = 'ice.png'
+    
+        let xbunny = 55
+        let ybunny = 55
+        let speed = 11
+        let magic = 5
         
-        createText('♡Thank you♡', 1263)
-
-        createPixel(bbypink, 55, 154, 11, 11, 0)
-        createPixel(bbypink, 55, 165, 11, 11, 0)
-        createPixel(pink, 55, 187, 11, 11, 0)
-        createPixel(pink, 55, 198, 11, 11, 0)
-        createPixel(bloodpink, 66, 143, 11, 11, 0)
-        createPixel(pink, 66, 154, 11, 11, 0)
-        createPixel(pink, 66, 165, 11, 11, 0)
-        createPixel(hotpink, 66, 176, 11, 11, 0)
-        createPixel(bloodpink, 66, 187, 11, 11, 0)
-        createPixel(bloodpink, 66, 198, 11, 11, 0)
-        createPixel(bbypink, 66, 208, 11, 11, 0)
-        createPixel(bloodpink, 77, 143, 11, 11, 0)
-        createPixel(pink, 77, 154, 11, 11, 0)
-        createPixel(hotpink, 77, 165, 11, 11, 0)
-        createPixel(bloodpink, 77, 176, 11, 11, 0)
-        createPixel(pink, 77, 187, 11, 11, 0)
-        createPixel(hotpink, 77, 198, 11, 11, 0)
-        createPixel(bbypink, 77, 208, 11, 11, 0)
-        createPixel(hotpink, 88, 154, 11, 11, 0)
-        createPixel(hotpink, 88, 165, 11, 11, 0)
-        createPixel(bloodpink, 88, 176, 11, 11, 0)
-        createPixel(pink, 88, 187, 11, 11, 0)
-        createPixel(pink, 88, 198, 11, 11, 0)
-        createPixel(hotpink, 99, 165, 11, 11, 0)
-        createPixel(bloodpink, 99, 176, 11, 11, 0)
-        createPixel(pink, 99, 187, 11, 11, 0)
-        createPixel(hotpink, 110, 176, 11, 11, 0)
-
-        createPix(bloodpink, 55, 154, 11, 11, magic)
-        createPix(bloodpink, 55, 165, 11, 11, magic)
-        createPix(hotpink, 55, 187, 11, 11, magic)
-        createPix(hotpink, 55, 198, 11, 11, magic)
-        createPix(bbypink, 66, 143, 11, 11, magic)
-        createPix(hotpink, 66, 154, 11, 11, magic)
-        createPix(hotpink, 66, 165, 11, 11, magic)
-        createPix(pink, 66, 176, 11, 11, magic)
-        createPix(bbypink, 66, 187, 11, 11, magic)
-        createPix(bbypink, 66, 198, 11, 11, magic)
-        createPix(bloodpink, 66, 208, 11, 11, magic)
-        createPix(bbypink, 77, 143, 11, 11, magic)
-        createPix(hotpink, 77, 154, 11, 11, magic)
-        createPix(pink, 77, 165, 11, 11, magic)
-        createPix(bbypink, 77, 176, 11, 11, magic)
-        createPix(hotpink, 77, 187, 11, 11, magic)
-        createPix(pink, 77, 198, 11, 11, magic)
-        createPix(bloodpink, 77, 208, 11, 11, magic)
-        createPix(pink, 88, 154, 11, 11, magic)
-        createPix(pink, 88, 165, 11, 11, magic)
-        createPix(bbypink, 88, 176, 11, 11, magic)
-        createPix(hotpink, 88, 187, 11, 11, magic)
-        createPix(hotpink, 88, 198, 11, 11, magic)
-        createPix(pink, 99, 165, 11, 11, magic)
-        createPix(bbypink, 99, 176, 11, 11, magic)
-        createPix(hotpink, 99, 187, 11, 11, magic)
-        createPix(pink, 110, 176, 11, 11, magic)
-
-    }
-
-        window.addEventListener('load', setup)
-
-    </script>
-
-<div class="link1" style="position: absolute; top: 777; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/bunnyone/" target="_blank" rel="noreferrer noopener">Bunny</a></div>
-<div class="link2" style="position: absolute; top: 810; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/bunnyduck/" target="_blank" rel="noreferrer noopener">Bunnyduck</a></div>
-<div class="link3" style="position: absolute; top: 843; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/artificial-fireflies-lol/" target="_blank" rel="noreferrer noopener">fireflies</a></div>
-<div class="link4" style="position: absolute; top: 876; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/user138892430/" target="_blank" rel="noreferrer noopener">An page made for my friends soundcloud</a></div>
-<div class="link5" style="position: absolute; top: 909; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/mix-me/" target="_blank" rel="noreferrer noopener">Mix-me</a></div>
-
-</body>
+        function createText(cool, branch) {
+            const text = document.createElement("div")
+            const content = document.createTextNode(cool)
+            text.appendChild(content)
+            const currentDiv = document.getElementById("div1")
+            document.body.insertBefore(text, currentDiv)
+            text.style.position = 'absolute'
+            text.style.top = branch
+            text.style.left = innerWidth / 7 
+            text.style.color = '#213340'
+            text.style.fontSize = 22
+          }
+    
+        function createPixel(backgroundColour, xpixel, ypixel, hpixel, wpixel, layer) {
+            let xpixels = xbunny + xpixel
+            let ypixels = ybunny + ypixel
+            const pixel = document.createElement("div")
+            pixel.className = 'square'
+            document.body.appendChild(pixel)
+            pixel.style.position = 'absolute'
+            pixel.style.top = xpixels
+            pixel.style.left = ypixels
+            pixel.style.background = backgroundColour
+            pixel.style.height = hpixel
+            pixel.style.width = wpixel
+            pixel.style.zIndex = layer
+    
+            window.addEventListener('keydown', (e) => {
+                if (e.keyCode === 37) {
+                    // move left
+                    if (ypixels > -111) {
+                        ypixels -= speed
+                        pixel.style.left = ypixels
+                    }
+                    if (ypixels < -11) {
+                        ypixels += (window.innerWidth + 11)
+                        xpixels -= 111
+                        pixel.style.left = ypixels
+                        pixel.style.top = xpixels
+                    }
+                } else if (e.keyCode === 39) {
+                    //move right
+                    if (ypixels - 11 < window.innerWidth) {
+                        ypixels += speed
+                        console.log(ypixels)
+                        console.log(xpixels)
+                        pixel.style.left = ypixels
+                    }
+                    if (ypixels > window.innerWidth + 11) {
+                        ypixels -= (window.innerWidth + 11)
+                        xpixels += 111 
+                        pixel.style.left = ypixels 
+                        pixel.style.top = xpixels 
+                    }
+                }
+            } )
+        }
+    
+        function createPix(backgroundColour, xpixel, ypixel, hpixel, wpixel, layer) {
+            let xpixels = xbunny + xpixel
+            let ypixels = ybunny + ypixel
+            const pixel = document.createElement("div")
+            pixel.className = 'box'
+            document.body.appendChild(pixel)
+            pixel.style.position = 'absolute'
+            pixel.style.top = xpixels
+            pixel.style.left = ypixels
+            pixel.style.background = backgroundColour
+            pixel.style.height = hpixel
+            pixel.style.width = wpixel
+            pixel.style.zIndex = layer
+    
+            window.addEventListener('keydown', (e) => {
+                if (e.keyCode === 37) {
+                    // move left
+                    if (ypixels > -111) {
+                        ypixels -= speed
+                        layer *= -1
+                        pixel.style.left = ypixels
+                        pixel.style.zIndex = layer
+                    }
+                    if (ypixels < -11) {
+                        ypixels += (window.innerWidth + 11)
+                        xpixels -= 111
+                        layer *= -1
+                        pixel.style.left = ypixels
+                        pixel.style.top = xpixels
+                        pixel.style.zIndex = layer
+                    }
+                } else if (e.keyCode === 39) {
+                    //move right
+                    if (ypixels - 11 < window.innerWidth) {
+                        ypixels += speed
+                        layer *= -1
+                        pixel.style.left = ypixels
+                        pixel.style.zIndex = layer
+                    }
+                    if (ypixels > window.innerWidth + 11) {
+                        ypixels -= (window.innerWidth + 11)
+                        xpixels += 111 
+                        layer *= -1
+                        pixel.style.left = ypixels 
+                        pixel.style.top = xpixels 
+                        pixel.style.zIndex = layer
+                    }
+                }
+            } )
+        }
+    
+        function setup () {
+            document.body.style.backgroundColor = bgColor
+            const icepng = document.createElement('img')
+            icepng.src = imageURL
+            document.body.appendChild(icepng)
+            icepng.style.zIndex = -666
+            icepng.style.width = (window.innerWidth - 666/3)
+            icepng.style.top = 22
+            icepng.style.left = 22
+           
+            createText('Here are some html files to look at. View the page source to see similarities in my code.', 666)
+            createText('links to:', 722)
+            createText('Templates! ready to be copied!', 777)
+            createText('More html files', 944)
+            createText('The maker of Bunny is a human reincarnate on planet Earth. They are deeply connected to the woods, the Earth and are interested in nature preservation and cultivation. They believe in giving back the land. The maker studied visual arts at a public arts magnet high school where they learned the importance of play and started storytelling, practicing in a studio setting for the first time. As an undergraduate student, they became interested in the history of hypertext, interactive fiction and other storytelling forms online. The maker of Bunny was highly influenced by their experience learning about and making Twine interactive games and Internet art in college and also by their own personal experiences playing computer games and being online in their childhood. Bunny as a project was designed for the makers siblings and to pass on coding knowledge the maker had learned in college. ', 1166)
+            
+            createText('♡Thank you♡', 1666)
+    
+            createPixel(bbypink, 55, 154, 11, 11, 0)
+            createPixel(bbypink, 55, 165, 11, 11, 0)
+            createPixel(pink, 55, 187, 11, 11, 0)
+            createPixel(pink, 55, 198, 11, 11, 0)
+            createPixel(bloodpink, 66, 143, 11, 11, 0)
+            createPixel(pink, 66, 154, 11, 11, 0)
+            createPixel(pink, 66, 165, 11, 11, 0)
+            createPixel(hotpink, 66, 176, 11, 11, 0)
+            createPixel(bloodpink, 66, 187, 11, 11, 0)
+            createPixel(bloodpink, 66, 198, 11, 11, 0)
+            createPixel(bbypink, 66, 208, 11, 11, 0)
+            createPixel(bloodpink, 77, 143, 11, 11, 0)
+            createPixel(pink, 77, 154, 11, 11, 0)
+            createPixel(hotpink, 77, 165, 11, 11, 0)
+            createPixel(bloodpink, 77, 176, 11, 11, 0)
+            createPixel(pink, 77, 187, 11, 11, 0)
+            createPixel(hotpink, 77, 198, 11, 11, 0)
+            createPixel(bbypink, 77, 208, 11, 11, 0)
+            createPixel(hotpink, 88, 154, 11, 11, 0)
+            createPixel(hotpink, 88, 165, 11, 11, 0)
+            createPixel(bloodpink, 88, 176, 11, 11, 0)
+            createPixel(pink, 88, 187, 11, 11, 0)
+            createPixel(pink, 88, 198, 11, 11, 0)
+            createPixel(hotpink, 99, 165, 11, 11, 0)
+            createPixel(bloodpink, 99, 176, 11, 11, 0)
+            createPixel(pink, 99, 187, 11, 11, 0)
+            createPixel(hotpink, 110, 176, 11, 11, 0)
+    
+            createPix(bloodpink, 55, 154, 11, 11, magic)
+            createPix(bloodpink, 55, 165, 11, 11, magic)
+            createPix(hotpink, 55, 187, 11, 11, magic)
+            createPix(hotpink, 55, 198, 11, 11, magic)
+            createPix(bbypink, 66, 143, 11, 11, magic)
+            createPix(hotpink, 66, 154, 11, 11, magic)
+            createPix(hotpink, 66, 165, 11, 11, magic)
+            createPix(pink, 66, 176, 11, 11, magic)
+            createPix(bbypink, 66, 187, 11, 11, magic)
+            createPix(bbypink, 66, 198, 11, 11, magic)
+            createPix(bloodpink, 66, 208, 11, 11, magic)
+            createPix(bbypink, 77, 143, 11, 11, magic)
+            createPix(hotpink, 77, 154, 11, 11, magic)
+            createPix(pink, 77, 165, 11, 11, magic)
+            createPix(bbypink, 77, 176, 11, 11, magic)
+            createPix(hotpink, 77, 187, 11, 11, magic)
+            createPix(pink, 77, 198, 11, 11, magic)
+            createPix(bloodpink, 77, 208, 11, 11, magic)
+            createPix(pink, 88, 154, 11, 11, magic)
+            createPix(pink, 88, 165, 11, 11, magic)
+            createPix(bbypink, 88, 176, 11, 11, magic)
+            createPix(hotpink, 88, 187, 11, 11, magic)
+            createPix(hotpink, 88, 198, 11, 11, magic)
+            createPix(pink, 99, 165, 11, 11, magic)
+            createPix(bbypink, 99, 176, 11, 11, magic)
+            createPix(hotpink, 99, 187, 11, 11, magic)
+            createPix(pink, 110, 176, 11, 11, magic)
+    
+        }
+    
+            window.addEventListener('load', setup)
+    
+        </script>
+    
+    <div class="link" style="position: absolute; top: 811; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/text.html/" target="_blank" rel="noreferrer noopener">text.html</a></div>
+    <div class="link" style="position: absolute; top: 844; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/heart.html/" target="_blank" rel="noreferrer noopener">heart.html</a></div>
+    <div class="link" style="position: absolute; top: 877; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/heartwithtext.html/" target="_blank" rel="noreferrer noopener">heartwithtext.html</a></div>
+    <div class="link" style="position: absolute; top: 977; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/bunnyone/" target="_blank" rel="noreferrer noopener">Bunny</a></div>
+    <div class="link" style="position: absolute; top: 1010; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/bunnyduck/" target="_blank" rel="noreferrer noopener">Bunnyduck</a></div>
+    <div class="link" style="position: absolute; top: 1043; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/artificial-fireflies-lol/" target="_blank" rel="noreferrer noopener">fireflies</a></div>
+    <div class="link" style="position: absolute; top: 1076; left: 222; font-size: 22;";><a href="https://sofhaf.github.io/user138892430/" target="_blank" rel="noreferrer noopener">An page made for my friends soundcloud</a></div>
+    <div class="link" style="position: absolute; top: 1109; left: 222; font-size: 22;"><a href="https://sofhaf.github.io/mix-me/" target="_blank" rel="noreferrer noopener">Mix-me</a></div>
+    
+    </body>
